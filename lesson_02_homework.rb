@@ -1,3 +1,4 @@
+
 # Code Reading
 
 def fizzbuzz(num)
@@ -28,16 +29,61 @@ end
 # Fix Broken Code
 
 def area_of_triangle(b, h)
-  puts b x height / 2
+  puts (b * h) / 2
 end
 
 base = 7
 height = 6
 
-puts area_of_triangle(height, height)
+puts area_of_triangle(base, height)
 
 # Coding
 
-class Reservation
+class Waitlist
   # add your code here
+  # attr_accessor :party
+  attr_accessor :lists
+
+  def initialize
+    @list = ["Balmert", "Carter", "Wright", "Fey"]
+  end 
+
+  def add_party(party_name)
+    @list << party_name
+    puts "#{party_name} party, you've been added to the list."
+    return
+  end 
+
+  def seat
+    party_name = @list.shift
+    puts "#{party_name} party, your table is ready."
+    return @list
+  end
+
+  def list
+    print "The next parties are #{@list}."
+  end
+
 end
+
+waitlist = Waitlist.new
+
+puts waitlist.add_party("Ventura")
+puts waitlist.seat
+puts waitlist.list
+
+puts waitlist.add_party("Brown")
+puts waitlist.seat
+puts waitlist.list
+
+=begin
+    Add a method called "add_party" that takes a string (representing the name of the party) as a parameter and adds the name to an array called list, this method should return the name of the recently added party
+    
+    Add a method called "list" that displays the list array of all of the parties that are currently waiting for a table in the order in which they were added (i.e. the name listed first represents the first party in the list, second represents the second party and so on...)
+    
+    Add a method called "seat" that removes the first string (representing the party) from the list array, this method should return the newly updated list (with the name of the recently seated party removed)
+   
+      Make sure you create a new instance of the Waitlist class and call each method
+    
+    Use puts to print the results of each method in the console
+=end
