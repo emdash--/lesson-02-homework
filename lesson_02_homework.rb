@@ -41,8 +41,7 @@ puts area_of_triangle(base, height)
 
 class Waitlist
   # add your code here
-  # attr_accessor :party
-  attr_accessor :lists
+  attr_accessor :list
 
   def initialize
     @list = ["Balmert", "Carter", "Wright", "Fey"]
@@ -50,18 +49,16 @@ class Waitlist
 
   def add_party(party_name)
     @list << party_name
-    puts "#{party_name} party, you've been added to the list."
-    return
+    youre_added_to_list = "#{party_name} party, you've been added to the list."
   end 
 
   def seat
     party_name = @list.shift
-    puts "#{party_name} party, your table is ready."
-    return @list
+    your_table_is_ready = "#{party_name} party, your table is ready."
   end
 
   def list
-    print "The next parties are #{@list}."
+    the_next_parties = "The next parties are #{@list}."
   end
 
 end
