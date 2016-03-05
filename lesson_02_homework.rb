@@ -49,16 +49,16 @@ class Waitlist
 
   def add_party(party_name)
     @list << party_name
-    youre_added_to_list = "#{party_name} party, you've been added to the list."
+    "#{party_name} party, you've been added to the list."
   end 
 
   def seat
     party_name = @list.shift
-    your_table_is_ready = "#{party_name} party, your table is ready."
+    "#{party_name} party, your table is ready."
   end
 
   def list
-    the_next_parties = "The next parties are #{@list}."
+    "The next parties are #{@list}."
   end
 
 end
