@@ -44,33 +44,39 @@ class Waitlist
   attr_accessor :list
 
   def initialize
-    @list = ["Balmert", "Carter", "Wright", "Fey"]
+    @list = ["Party 1"]
   end 
 
   def add_party(party_name)
     @list << party_name
-    "#{party_name} party, you've been added to the list."
+    @list.last
   end 
 
   def seat
-    party_name = @list.shift
-    "#{party_name} party, your table is ready."
-  end
-
-  def list
-    "The next parties are #{@list}."
+    @list.shift
+    @list
   end
 
 end
 
 waitlist = Waitlist.new
 
-puts waitlist.add_party("Ventura")
+puts "Adding party to the list"
+puts waitlist.add_party("Party 2")
+
+puts "Seating party at the top of the list"
 puts waitlist.seat
+
+puts "Listing waiting parties..."
 puts waitlist.list
 
-puts waitlist.add_party("Brown")
+puts "Adding party to the list"
+puts waitlist.add_party("Party 3")
+
+puts "Seating party at the top of the list"
 puts waitlist.seat
+
+puts "Listing waiting parties..."
 puts waitlist.list
 
 =begin
